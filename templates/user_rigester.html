@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper" style="text-align: center;">
+        <h1>회원가입</h1>
+        <form method="POST">
+            {% csrf_token %}
+            아이디: <br>
+            <input name="username" type="text">
+            <br>
+            이메일: <br>
+            <input name="email" type="email">
+            <br>
+            비밀번호: <br>
+            <input name="password1" type="password">
+            <br>
+            비밀번호 확인: <br>
+            <input name="password2" type="password">
+            <br>
+            핸드폰 번호: <br>
+            <input name="Phone_number" type="text">
+            <br>
+            우편번호: <br>
+            <input name="post_code" type="text">
+            <br>
+            주소: <br>
+            <input name="address" type="text">
+            <br>
+            상세주소: <br>
+            <input name="detail_address" type="text">
+            <br><br>
+            <input type="submit" class="btn btn-primary" value="Sign Up">
+        </form>
+    </div>
+</body>
+</html>

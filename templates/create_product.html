@@ -1,0 +1,46 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create product</title>
+</head>
+<body>
+    <form action="{% url 'createproduct' %}" method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        <select class="form-control mb-4" name="category">
+            <option selected disabled>Select Category</option>
+    
+            {% for cat in p_category %}
+            <option value="{{cat.id}}">{{cat.name}}</option>
+            {% endfor %}
+    
+        </select>
+        <label for="product_name">product_name: </label>
+        <input id="product_name" type="text" name="product_name" value="">
+    
+        <label for="MSRP">MSRP: </label>
+        <input id="MSRP" type="text" name="MSRP" value="">
+    
+        <label for="in_box">in_box: </label>
+        <input id="in_box" type="text" name="in_box" value="">
+
+        <label for="stock">stock: </label>
+        <input id="stock" type="text" name="stock" value="">
+
+        <label for="image">image: </label>
+        <input id="image" type="file" name="image" value="">
+
+        <label for="content">content: </label>
+        <input id="content" type="text" name="content" value="">
+
+        <label for="product_document">product_document: </label>
+        <input id="product_document" type="file" name="product_document" value="">
+    
+        <!--    {{ form }} -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
